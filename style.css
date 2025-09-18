@@ -363,7 +363,7 @@ body::after {
     border-radius: 8px;
     position: relative;
     flex-shrink: 0;
-    background-image: url('assets/images/avatar.jpg');
+    background-image: url('me.png');
     background-size: cover;
     background-position: center;
     image-rendering: pixelated;
