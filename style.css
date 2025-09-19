@@ -11,14 +11,15 @@ html {
     overflow-y: auto;
 }
 
-html, body {
+html,
+body {
     min-height: 100vh;
     width: 100%;
 }
 
 body {
     font-family: 'Press Start 2P', cursive;
-    background: 
+    background:
         /* Authentic Stardew Valley background */
         url('assets/images/stardewbackground.png') repeat,
         /* Fallback gradient if image doesn't load */
@@ -39,8 +40,8 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px);
+    background-image:
+        repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
     pointer-events: none;
     z-index: -1;
 }
@@ -53,26 +54,31 @@ body::after {
     left: 0;
     width: 120%;
     height: 100%;
-    background-image: 
+    background-image:
         /* Clouds */
-        radial-gradient(ellipse 80px 40px at 20% 15%, rgba(255,255,255,0.2) 0%, transparent 50%),
-        radial-gradient(ellipse 100px 50px at 80% 8%, rgba(255,255,255,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse 60px 30px at 60% 25%, rgba(255,255,255,0.12) 0%, transparent 50%),
-        radial-gradient(ellipse 90px 45px at 30% 12%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(ellipse 70px 35px at 90% 18%, rgba(255,255,255,0.14) 0%, transparent 50%),
+        radial-gradient(ellipse 80px 40px at 20% 15%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse 100px 50px at 80% 8%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 60px 30px at 60% 25%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 90px 45px at 30% 12%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 70px 35px at 90% 18%, rgba(255, 255, 255, 0.14) 0%, transparent 50%),
         /* Subtle flowers in grass */
-        radial-gradient(circle 3px at 15% 85%, rgba(255,182,193,0.3) 0%, transparent 50%),
-        radial-gradient(circle 2px at 85% 90%, rgba(255,255,0,0.2) 0%, transparent 50%),
-        radial-gradient(circle 3px at 45% 88%, rgba(138,43,226,0.25) 0%, transparent 50%),
-        radial-gradient(circle 2px at 75% 86%, rgba(255,182,193,0.2) 0%, transparent 50%);
+        radial-gradient(circle 3px at 15% 85%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle 2px at 85% 90%, rgba(255, 255, 0, 0.2) 0%, transparent 50%),
+        radial-gradient(circle 3px at 45% 88%, rgba(138, 43, 226, 0.25) 0%, transparent 50%),
+        radial-gradient(circle 2px at 75% 86%, rgba(255, 182, 193, 0.2) 0%, transparent 50%);
     animation: cloudFloat 60s linear infinite;
     pointer-events: none;
     z-index: -1;
 }
 
 @keyframes cloudFloat {
-    0% { transform: translateX(-20%); }
-    100% { transform: translateX(0%); }
+    0% {
+        transform: translateX(-20%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 /* Stardew Valley Clock Widget */
@@ -175,12 +181,15 @@ body::after {
     0% {
         transform: rotate(0deg) scale(1);
     }
+
     33.33% {
         transform: rotate(90deg) scale(1);
     }
+
     66.66% {
         transform: rotate(180deg) scale(1);
     }
+
     100% {
         transform: rotate(0deg) scale(1);
     }
@@ -232,12 +241,36 @@ body::after {
     z-index: 100;
 }
 
-.butterfly-3.color-1 { filter: hue-rotate(280deg) saturate(1.5) brightness(1.1) !important; } /* Pink */
-.butterfly-3.color-2 { filter: hue-rotate(120deg) saturate(1.3) brightness(1.1) !important; } /* Green */
-.butterfly-3.color-3 { filter: hue-rotate(200deg) saturate(1.4) brightness(1.0) !important; } /* Blue */
-.butterfly-3.color-4 { filter: hue-rotate(60deg) saturate(1.6) brightness(1.2) !important; } /* Yellow */
-.butterfly-3.color-5 { filter: hue-rotate(300deg) saturate(1.2) brightness(0.9) !important; } /* Purple */
-.butterfly-3.color-6 { filter: none !important; } /* Original red */
+.butterfly-3.color-1 {
+    filter: hue-rotate(280deg) saturate(1.5) brightness(1.1) !important;
+}
+
+/* Pink */
+.butterfly-3.color-2 {
+    filter: hue-rotate(120deg) saturate(1.3) brightness(1.1) !important;
+}
+
+/* Green */
+.butterfly-3.color-3 {
+    filter: hue-rotate(200deg) saturate(1.4) brightness(1.0) !important;
+}
+
+/* Blue */
+.butterfly-3.color-4 {
+    filter: hue-rotate(60deg) saturate(1.6) brightness(1.2) !important;
+}
+
+/* Yellow */
+.butterfly-3.color-5 {
+    filter: hue-rotate(300deg) saturate(1.2) brightness(0.9) !important;
+}
+
+/* Purple */
+.butterfly-3.color-6 {
+    filter: none !important;
+}
+
+/* Original red */
 
 .butterfly-4 {
     top: 80%;
@@ -262,43 +295,115 @@ body::after {
 
 /* Butterfly hover animations */
 @keyframes hoverLeft1 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(-15px) translateY(-20px); }
-    50% { transform: translateX(10px) translateY(15px); }
-    75% { transform: translateX(-10px) translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(-15px) translateY(-20px);
+    }
+
+    50% {
+        transform: translateX(10px) translateY(15px);
+    }
+
+    75% {
+        transform: translateX(-10px) translateY(-10px);
+    }
 }
 
 @keyframes hoverRight1 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(15px) translateY(18px); }
-    50% { transform: translateX(-8px) translateY(-12px); }
-    75% { transform: translateX(12px) translateY(8px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(15px) translateY(18px);
+    }
+
+    50% {
+        transform: translateX(-8px) translateY(-12px);
+    }
+
+    75% {
+        transform: translateX(12px) translateY(8px);
+    }
 }
 
 @keyframes hoverLeft2 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    30% { transform: translateX(-20px) translateY(25px); }
-    60% { transform: translateX(15px) translateY(-18px); }
-    80% { transform: translateX(-12px) translateY(10px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    30% {
+        transform: translateX(-20px) translateY(25px);
+    }
+
+    60% {
+        transform: translateX(15px) translateY(-18px);
+    }
+
+    80% {
+        transform: translateX(-12px) translateY(10px);
+    }
 }
 
 @keyframes hoverRight2 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    40% { transform: translateX(18px) translateY(-15px); }
-    70% { transform: translateX(-10px) translateY(20px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    40% {
+        transform: translateX(18px) translateY(-15px);
+    }
+
+    70% {
+        transform: translateX(-10px) translateY(20px);
+    }
 }
 
 @keyframes hoverLeft3 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    20% { transform: translateX(-12px) translateY(-25px); }
-    50% { transform: translateX(8px) translateY(12px); }
-    80% { transform: translateX(-15px) translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    20% {
+        transform: translateX(-12px) translateY(-25px);
+    }
+
+    50% {
+        transform: translateX(8px) translateY(12px);
+    }
+
+    80% {
+        transform: translateX(-15px) translateY(-8px);
+    }
 }
 
 @keyframes hoverRight3 {
-    0%, 100% { transform: translateX(0) translateY(0); }
-    35% { transform: translateX(20px) translateY(22px); }
-    65% { transform: translateX(-15px) translateY(-16px); }
+
+    0%,
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+
+    35% {
+        transform: translateX(20px) translateY(22px);
+    }
+
+    65% {
+        transform: translateX(-15px) translateY(-16px);
+    }
 }
 
 
@@ -307,22 +412,22 @@ body::after {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 120px;
     min-height: 100vh;
-    background-image: 
+    background-image:
         radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%);
 }
 
 /* Character Section */
 .character-section {
-    background: 
+    background:
         linear-gradient(145deg, rgba(230, 192, 138, 0.95), rgba(240, 210, 160, 0.95)),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect width="20" height="20" fill="%23F4E4BC"/><rect width="10" height="10" fill="%23E6D3A3"/><rect x="10" y="10" width="10" height="10" fill="%23E6D3A3"/></svg>');
     border-radius: 16px;
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 
+    box-shadow:
         /* Multi-layered border effect */
         0 0 0 2px #2F1B14,
         0 0 0 4px #8B4513,
@@ -333,7 +438,7 @@ body::after {
         inset 3px 3px 0px rgba(255, 248, 220, 0.6),
         inset -3px -3px 0px rgba(139, 69, 19, 0.6),
         /* Drop shadow */
-        0 12px 25px rgba(0,0,0,0.5);
+        0 12px 25px rgba(0, 0, 0, 0.5);
     position: relative;
     backdrop-filter: blur(2px);
 }
@@ -379,15 +484,22 @@ body::after {
 .pixel-avatar:hover {
     transform: scale(1.05) rotate(2deg);
     border-color: #DAA520;
-    box-shadow: 
+    box-shadow:
         0 0 20px rgba(218, 165, 32, 0.6),
-        inset 1px 1px 0px rgba(255,255,255,0.2);
+        inset 1px 1px 0px rgba(255, 255, 255, 0.2);
     animation: avatarGlow 0.5s ease-in-out;
 }
 
 @keyframes avatarGlow {
-    0%, 100% { box-shadow: 0 0 20px rgba(218, 165, 32, 0.6); }
-    50% { box-shadow: 0 0 30px rgba(218, 165, 32, 0.8); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(218, 165, 32, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(218, 165, 32, 0.8);
+    }
 }
 
 .character-info {
@@ -437,7 +549,7 @@ body::after {
 .contact-item:hover {
     background: rgba(47, 27, 20, 0.1);
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .contact-item .icon {
@@ -495,9 +607,9 @@ body::after {
     border-radius: 8px;
     font-size: 10px;
     font-family: 'Press Start 2P', cursive;
-    box-shadow: 
-        inset 1px 1px 0px rgba(255,255,255,0.2),
-        0 4px 12px rgba(0,0,0,0.3);
+    box-shadow:
+        inset 1px 1px 0px rgba(255, 255, 255, 0.2),
+        0 4px 12px rgba(0, 0, 0, 0.3);
     border: 2px solid #006400;
     z-index: 9999;
     opacity: 0;
@@ -517,7 +629,7 @@ body::after {
     justify-content: center;
     flex-wrap: wrap;
     padding: 15px;
-    background: 
+    background:
         linear-gradient(145deg, rgba(230, 192, 138, 0.4), rgba(240, 210, 160, 0.4)),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" fill="%23F4E4BC" opacity="0.1"/><circle cx="8" cy="8" r="2" fill="%23F0D2A0" opacity="0.2"/><circle cx="24" cy="8" r="2" fill="%23F0D2A0" opacity="0.2"/><circle cx="8" cy="24" r="2" fill="%23F0D2A0" opacity="0.2"/><circle cx="24" cy="24" r="2" fill="%23F0D2A0" opacity="0.2"/></svg>');
     border-radius: 12px;
@@ -537,7 +649,7 @@ body::after {
     align-items: center;
     gap: 8px;
     transition: all 0.2s;
-    box-shadow: 
+    box-shadow:
         inset 1px 1px 0px #F4E1BB,
         inset -1px -1px 0px #D4A574;
     width: 160px;
@@ -546,10 +658,10 @@ body::after {
 
 .tab:hover {
     transform: translateY(-3px);
-    box-shadow: 
+    box-shadow:
         inset 1px 1px 0px #F4E1BB,
         inset -1px -1px 0px #D4A574,
-        0 6px 12px rgba(0,0,0,0.4),
+        0 6px 12px rgba(0, 0, 0, 0.4),
         0 0 20px rgba(218, 165, 32, 0.3);
     background: linear-gradient(145deg, #DEB887, #F4A460);
     animation: tabGlow 0.3s ease-in-out;
@@ -557,17 +669,25 @@ body::after {
 
 .tab:active {
     transform: translateY(1px);
-    box-shadow: 
-        inset 2px 2px 4px rgba(0,0,0,0.3),
+    box-shadow:
+        inset 2px 2px 4px rgba(0, 0, 0, 0.3),
         inset 1px 1px 0px #D4A574,
         inset -1px -1px 0px #F4E1BB;
     background: linear-gradient(145deg, #CD853F, #DEB887);
 }
 
 @keyframes tabGlow {
-    0% { box-shadow: inset 1px 1px 0px #F4E1BB, inset -1px -1px 0px #D4A574, 0 2px 4px rgba(0,0,0,0.2); }
-    50% { box-shadow: inset 1px 1px 0px #F4E1BB, inset -1px -1px 0px #D4A574, 0 8px 16px rgba(0,0,0,0.5), 0 0 25px rgba(218, 165, 32, 0.4); }
-    100% { box-shadow: inset 1px 1px 0px #F4E1BB, inset -1px -1px 0px #D4A574, 0 6px 12px rgba(0,0,0,0.4), 0 0 20px rgba(218, 165, 32, 0.3); }
+    0% {
+        box-shadow: inset 1px 1px 0px #F4E1BB, inset -1px -1px 0px #D4A574, 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: inset 1px 1px 0px #F4E1BB, inset -1px -1px 0px #D4A574, 0 8px 16px rgba(0, 0, 0, 0.5), 0 0 25px rgba(218, 165, 32, 0.4);
+    }
+
+    100% {
+        box-shadow: inset 1px 1px 0px #F4E1BB, inset -1px -1px 0px #D4A574, 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 20px rgba(218, 165, 32, 0.3);
+    }
 }
 
 .tab.active {
@@ -591,13 +711,13 @@ body::after {
 
 /* Content Container */
 .content-container {
-    background: 
+    background:
         linear-gradient(145deg, rgba(230, 192, 138, 0.95), rgba(240, 210, 160, 0.95)),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect width="16" height="16" fill="%23F0D2A0"/><rect width="8" height="8" fill="%23E6C08A"/><rect x="8" y="8" width="8" height="8" fill="%23E6C08A"/><rect x="2" y="2" width="12" height="12" fill="none" stroke="%23F0D2A0" stroke-width="0.5" opacity="0.3"/></svg>');
     border-radius: 16px;
     padding: 25px;
     margin-bottom: 30px;
-    box-shadow: 
+    box-shadow:
         /* Multi-layered border effect */
         0 0 0 2px #2F1B14,
         0 0 0 4px #8B4513,
@@ -608,7 +728,7 @@ body::after {
         inset 3px 3px 0px rgba(255, 248, 220, 0.6),
         inset -3px -3px 0px rgba(139, 69, 19, 0.6),
         /* Drop shadow */
-        0 12px 25px rgba(0,0,0,0.5);
+        0 12px 25px rgba(0, 0, 0, 0.5);
     position: relative;
     min-height: 400px;
     backdrop-filter: blur(2px);
@@ -636,8 +756,15 @@ body::after {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .panel-header {
@@ -699,23 +826,37 @@ body::after {
 
 .skill-icon:hover {
     transform: translateY(-4px) scale(1.1);
-    box-shadow: 
-        0 8px 16px rgba(0,0,0,0.4),
-        inset 1px 1px 0px rgba(255,255,255,0.3);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        inset 1px 1px 0px rgba(255, 255, 255, 0.3);
     animation: skillBounce 0.6s ease-in-out;
 }
 
 @keyframes skillBounce {
-    0%, 100% { transform: translateY(-4px) scale(1.1); }
-    25% { transform: translateY(-6px) scale(1.15); }
-    50% { transform: translateY(-2px) scale(1.08); }
-    75% { transform: translateY(-5px) scale(1.12); }
+
+    0%,
+    100% {
+        transform: translateY(-4px) scale(1.1);
+    }
+
+    25% {
+        transform: translateY(-6px) scale(1.15);
+    }
+
+    50% {
+        transform: translateY(-2px) scale(1.08);
+    }
+
+    75% {
+        transform: translateY(-5px) scale(1.12);
+    }
 }
 
 /* Frontend Development - Pickaxe Icon */
 .skill-icon.frontend {
     background: linear-gradient(135deg, #B8860B, #DAA520);
 }
+
 .skill-icon.frontend::after {
     content: '';
     position: absolute;
@@ -723,7 +864,7 @@ body::after {
     left: 6px;
     width: 20px;
     height: 24px;
-    background: 
+    background:
         linear-gradient(45deg, #8B4513 0%, #8B4513 30%, #D2691E 30%, #D2691E 60%, #8B4513 60%);
     clip-path: polygon(20% 0%, 80% 0%, 90% 20%, 90% 50%, 70% 80%, 30% 80%, 10% 50%, 10% 20%);
 }
@@ -732,6 +873,7 @@ body::after {
 .skill-icon.backend {
     background: linear-gradient(135deg, #8B4513, #A0522D);
 }
+
 .skill-icon.backend::after {
     content: '';
     position: absolute;
@@ -739,7 +881,7 @@ body::after {
     left: 8px;
     width: 16px;
     height: 28px;
-    background: 
+    background:
         linear-gradient(180deg, #654321 0%, #654321 20%, #B8860B 20%, #B8860B 40%, #654321 40%);
 }
 
@@ -747,6 +889,7 @@ body::after {
 .skill-icon.database {
     background: linear-gradient(135deg, #4682B4, #87CEEB);
 }
+
 .skill-icon.database::after {
     content: '';
     position: absolute;
@@ -754,7 +897,7 @@ body::after {
     left: 4px;
     width: 24px;
     height: 24px;
-    background: 
+    background:
         radial-gradient(circle at center, #D2691E 20%, #8B4513 40%, transparent 60%),
         linear-gradient(90deg, #8B4513 45%, #8B4513 55%, transparent 55%);
 }
@@ -763,6 +906,7 @@ body::after {
 .skill-icon.devops {
     background: linear-gradient(135deg, #32CD32, #228B22);
 }
+
 .skill-icon.devops::after {
     content: '';
     position: absolute;
@@ -770,7 +914,7 @@ body::after {
     left: 4px;
     width: 24px;
     height: 20px;
-    background: 
+    background:
         linear-gradient(45deg, #4169E1 0%, #4169E1 30%, #87CEEB 30%, #87CEEB 70%, #4169E1 70%);
     border-radius: 50% 20% 50% 20%;
 }
@@ -779,6 +923,7 @@ body::after {
 .skill-icon.algorithms {
     background: linear-gradient(135deg, #9370DB, #8A2BE2);
 }
+
 .skill-icon.algorithms::after {
     content: '';
     position: absolute;
@@ -786,7 +931,7 @@ body::after {
     left: 6px;
     width: 20px;
     height: 24px;
-    background: 
+    background:
         radial-gradient(ellipse 8px 6px at center 8px, #FFF8DC 0%, #FFF8DC 80%, transparent 80%),
         linear-gradient(180deg, #8B4513 0%, #8B4513 15%, #FFF8DC 15%, #FFF8DC 85%, #8B4513 85%);
     border-radius: 2px;
@@ -796,6 +941,7 @@ body::after {
 .skill-icon.cpp {
     background: linear-gradient(135deg, #FF6347, #DC143C);
 }
+
 .skill-icon.cpp::after {
     content: '';
     position: absolute;
@@ -803,7 +949,7 @@ body::after {
     left: 6px;
     width: 20px;
     height: 20px;
-    background: 
+    background:
         linear-gradient(45deg, #FFF8DC 0%, #FFF8DC 30%, transparent 30%, transparent 40%, #FFF8DC 40%, #FFF8DC 60%, transparent 60%, transparent 70%, #FFF8DC 70%);
     clip-path: polygon(10% 20%, 90% 20%, 90% 30%, 20% 30%, 20% 50%, 80% 50%, 80% 60%, 10% 60%, 10% 80%, 90% 80%, 90% 90%, 10% 90%);
 }
@@ -836,57 +982,64 @@ body::after {
 }
 
 /* Green gradient for levels 8-10 (Expert) */
-.skill-progress[data-level="10"] { 
-    width: 100%; 
+.skill-progress[data-level="10"] {
+    width: 100%;
     background: linear-gradient(90deg, #32CD32, #00FF00, #228B22);
     box-shadow: 0 0 8px rgba(50, 205, 50, 0.6);
 }
-.skill-progress[data-level="9"] { 
-    width: 90%; 
+
+.skill-progress[data-level="9"] {
+    width: 90%;
     background: linear-gradient(90deg, #32CD32, #00FF00, #228B22);
     box-shadow: 0 0 6px rgba(50, 205, 50, 0.5);
 }
-.skill-progress[data-level="8"] { 
-    width: 80%; 
+
+.skill-progress[data-level="8"] {
+    width: 80%;
     background: linear-gradient(90deg, #228B22, #32CD32, #00FF32);
     box-shadow: 0 0 4px rgba(50, 205, 50, 0.4);
 }
 
 /* Yellow gradient for levels 5-7 (Intermediate) */
-.skill-progress[data-level="7"] { 
-    width: 70%; 
+.skill-progress[data-level="7"] {
+    width: 70%;
     background: linear-gradient(90deg, #FFD700, #FFA500, #FF8C00);
     box-shadow: 0 0 4px rgba(255, 215, 0, 0.4);
 }
-.skill-progress[data-level="6"] { 
-    width: 60%; 
+
+.skill-progress[data-level="6"] {
+    width: 60%;
     background: linear-gradient(90deg, #FFA500, #FFD700, #FFFF00);
     box-shadow: 0 0 4px rgba(255, 165, 0, 0.4);
 }
-.skill-progress[data-level="5"] { 
-    width: 50%; 
+
+.skill-progress[data-level="5"] {
+    width: 50%;
     background: linear-gradient(90deg, #FF8C00, #FFA500, #FFD700);
     box-shadow: 0 0 4px rgba(255, 140, 0, 0.4);
 }
 
 /* Red gradient for levels 1-4 (Beginner) */
-.skill-progress[data-level="4"] { 
-    width: 40%; 
+.skill-progress[data-level="4"] {
+    width: 40%;
     background: linear-gradient(90deg, #FF6347, #FF4500, #DC143C);
     box-shadow: 0 0 4px rgba(255, 99, 71, 0.4);
 }
-.skill-progress[data-level="3"] { 
-    width: 30%; 
+
+.skill-progress[data-level="3"] {
+    width: 30%;
     background: linear-gradient(90deg, #FF4500, #FF6347, #FF0000);
     box-shadow: 0 0 4px rgba(255, 69, 0, 0.4);
 }
-.skill-progress[data-level="2"] { 
-    width: 20%; 
+
+.skill-progress[data-level="2"] {
+    width: 20%;
     background: linear-gradient(90deg, #DC143C, #FF4500, #FF6347);
     box-shadow: 0 0 4px rgba(220, 20, 60, 0.4);
 }
-.skill-progress[data-level="1"] { 
-    width: 10%; 
+
+.skill-progress[data-level="1"] {
+    width: 10%;
     background: linear-gradient(90deg, #8B0000, #DC143C, #FF4500);
     box-shadow: 0 0 4px rgba(139, 0, 0, 0.4);
 }
@@ -899,13 +1052,18 @@ body::after {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: skillShimmer 2s ease-in-out infinite;
 }
 
 @keyframes skillShimmer {
-    0% { left: -100%; }
-    100% { left: 100%; }
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
 }
 
 .skill-level {
@@ -944,10 +1102,11 @@ body::after {
 /* Senior Position - Gold Star */
 .quest-marker.senior {
     background: radial-gradient(circle, #FFD700 30%, #FFA500 70%);
-    box-shadow: 
-        inset 2px 2px 0px rgba(255,255,255,0.5),
-        inset -2px -2px 0px rgba(0,0,0,0.3);
+    box-shadow:
+        inset 2px 2px 0px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 0px rgba(0, 0, 0, 0.3);
 }
+
 .quest-marker.senior::after {
     content: '★';
     position: absolute;
@@ -956,16 +1115,17 @@ body::after {
     transform: translate(-50%, -50%);
     color: #8B4513;
     font-size: 18px;
-    text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 
 /* Regular Position - Silver Star */
 .quest-marker.regular {
     background: radial-gradient(circle, #C0C0C0 30%, #A9A9A9 70%);
-    box-shadow: 
-        inset 2px 2px 0px rgba(255,255,255,0.5),
-        inset -2px -2px 0px rgba(0,0,0,0.3);
+    box-shadow:
+        inset 2px 2px 0px rgba(255, 255, 255, 0.5),
+        inset -2px -2px 0px rgba(0, 0, 0, 0.3);
 }
+
 .quest-marker.regular::after {
     content: '★';
     position: absolute;
@@ -974,7 +1134,7 @@ body::after {
     transform: translate(-50%, -50%);
     color: #2F1B14;
     font-size: 18px;
-    text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
 }
 
 .experience-content h3 {
@@ -1117,7 +1277,7 @@ body::after {
 
 .project-item:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 
+    box-shadow:
         inset 1px 1px 0px #CD853F,
         0 8px 25px rgba(255, 215, 0, 0.4),
         0 0 30px rgba(255, 215, 0, 0.2);
@@ -1128,9 +1288,17 @@ body::after {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Stardew Valley Project Icons */
@@ -1150,6 +1318,7 @@ body::after {
 .project-icon.quirk {
     background: linear-gradient(135deg, #9370DB, #8A2BE2);
 }
+
 .project-icon.quirk::after {
     content: '';
     position: absolute;
@@ -1157,7 +1326,7 @@ body::after {
     left: 6px;
     width: 36px;
     height: 36px;
-    background: 
+    background:
         linear-gradient(45deg, #FFF8DC 0%, #FFF8DC 30%, transparent 30%, transparent 70%, #FFF8DC 70%),
         linear-gradient(-45deg, #FFF8DC 0%, #FFF8DC 30%, transparent 30%, transparent 70%, #FFF8DC 70%);
     border-radius: 4px;
@@ -1167,6 +1336,7 @@ body::after {
 .project-icon.portfolio {
     background: linear-gradient(135deg, #FFD700, #FF6347);
 }
+
 .project-icon.portfolio::after {
     content: '';
     position: absolute;
@@ -1174,7 +1344,7 @@ body::after {
     left: 8px;
     width: 32px;
     height: 32px;
-    background: 
+    background:
         repeating-linear-gradient(0deg, #FFF8DC 0px, #FFF8DC 4px, transparent 4px, transparent 8px),
         repeating-linear-gradient(90deg, #FFF8DC 0px, #FFF8DC 4px, transparent 4px, transparent 8px);
     border-radius: 2px;
@@ -1184,6 +1354,7 @@ body::after {
 .project-icon.algorithms {
     background: linear-gradient(135deg, #DC143C, #B22222);
 }
+
 .project-icon.algorithms::after {
     content: '';
     position: absolute;
@@ -1191,13 +1362,13 @@ body::after {
     left: 8px;
     width: 32px;
     height: 36px;
-    background: 
+    background:
         linear-gradient(45deg, #FFF8DC 0%, #FFF8DC 25%, transparent 25%, transparent 50%, #FFF8DC 50%, #FFF8DC 75%, transparent 75%),
         linear-gradient(90deg, #654321 0%, #654321 15%, #FFF8DC 15%, #FFF8DC 85%, #654321 85%);
     border-radius: 2px;
-    box-shadow: 
-        inset -2px -2px 0px rgba(0,0,0,0.2),
-        inset 2px 2px 0px rgba(255,255,255,0.3);
+    box-shadow:
+        inset -2px -2px 0px rgba(0, 0, 0, 0.2),
+        inset 2px 2px 0px rgba(255, 255, 255, 0.3);
 }
 
 .project-content h3 {
@@ -1294,9 +1465,9 @@ body::after {
 
 .collectible-item:hover {
     transform: translateY(-4px) rotate(1deg);
-    box-shadow: 
+    box-shadow:
         inset 1px 1px 0px #CD853F,
-        0 8px 20px rgba(0,0,0,0.3),
+        0 8px 20px rgba(0, 0, 0, 0.3),
         0 0 30px rgba(255, 215, 0, 0.2);
     background: linear-gradient(145deg, #8B4513, #A0522D);
     border-color: #DAA520;
@@ -1308,8 +1479,15 @@ body::after {
 }
 
 @keyframes collectiblePulse {
-    0%, 100% { transform: scale(1.1); }
-    50% { transform: scale(1.2); }
+
+    0%,
+    100% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
 }
 
 /* Stardew Valley Collectible Icons */
@@ -1329,6 +1507,7 @@ body::after {
 .collectible-icon.gaming {
     background: linear-gradient(135deg, #8A2BE2, #9932CC);
 }
+
 .collectible-icon.gaming::after {
     content: '';
     position: absolute;
@@ -1336,7 +1515,7 @@ body::after {
     left: 8px;
     width: 24px;
     height: 24px;
-    background: 
+    background:
         linear-gradient(45deg, #4B0082 0%, #4B0082 40%, #8A2BE2 40%, #8A2BE2 60%, #4B0082 60%);
     border-radius: 40% 40% 60% 60%;
 }
@@ -1345,6 +1524,7 @@ body::after {
 .collectible-icon.drawing {
     background: linear-gradient(135deg, #FF69B4, #FF1493);
 }
+
 .collectible-icon.drawing::after {
     content: '';
     position: absolute;
@@ -1352,7 +1532,7 @@ body::after {
     left: 10px;
     width: 20px;
     height: 32px;
-    background: 
+    background:
         linear-gradient(0deg, #8B4513 0%, #8B4513 70%, #FFD700 70%, #FFD700 85%, #C0C0C0 85%);
     border-radius: 2px 2px 8px 8px;
 }
@@ -1361,6 +1541,7 @@ body::after {
 .collectible-icon.calisthenics {
     background: linear-gradient(135deg, #20B2AA, #008B8B);
 }
+
 .collectible-icon.calisthenics::after {
     content: '';
     position: absolute;
@@ -1368,7 +1549,7 @@ body::after {
     left: 8px;
     width: 24px;
     height: 24px;
-    background: 
+    background:
         radial-gradient(circle at 30% 30%, #2F4F4F 25%, transparent 25%),
         radial-gradient(circle at 70% 30%, #2F4F4F 25%, transparent 25%),
         linear-gradient(45deg, #2F4F4F 30%, transparent 30%, transparent 70%, #2F4F4F 70%);
@@ -1379,6 +1560,7 @@ body::after {
 .collectible-icon.dnd {
     background: linear-gradient(135deg, #8B4513, #A0522D);
 }
+
 .collectible-icon.dnd::after {
     content: '';
     position: absolute;
@@ -1386,7 +1568,7 @@ body::after {
     left: 8px;
     width: 24px;
     height: 24px;
-    background: 
+    background:
         radial-gradient(circle at 33% 33%, #FFF8DC 12%, transparent 12%),
         radial-gradient(circle at 67% 67%, #FFF8DC 12%, transparent 12%),
         radial-gradient(circle at 50% 50%, #FFF8DC 12%, transparent 12%),
@@ -1412,13 +1594,13 @@ body::after {
     padding: 20px;
     color: #2F1B14;
     position: relative;
-    background: 
+    background:
         linear-gradient(145deg, rgba(230, 192, 138, 0.3), rgba(240, 210, 160, 0.3)),
         url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect width="24" height="24" fill="%23228B22" opacity="0.1"/><rect x="2" y="20" width="20" height="4" fill="%23D4A574" opacity="0.3"/><circle cx="6" cy="18" r="1" fill="%23FFD700" opacity="0.4"/><circle cx="12" cy="18" r="1" fill="%23FFD700" opacity="0.4"/><circle cx="18" cy="18" r="1" fill="%23FFD700" opacity="0.4"/></svg>');
     border-radius: 12px;
     border: 2px solid rgba(200, 151, 109, 0.3);
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
     clear: both;
 }
 
@@ -1428,8 +1610,17 @@ body::after {
 }
 
 @keyframes sparkle {
-    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
-    50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 1;
+    }
 }
 
 .footer p {
@@ -1445,7 +1636,7 @@ body::after {
         padding: 20px 15px;
         max-width: 100%;
     }
-    
+
     /* Clock widget adjustments for tablets */
     .stardew-clock {
         top: 15px;
@@ -1454,44 +1645,44 @@ body::after {
         transform-origin: top right;
         z-index: 1100;
     }
-    
+
     /* Character section improvements */
     .character-section {
         padding: 20px;
         margin-bottom: 25px;
     }
-    
+
     .character-portrait {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
-    
+
     .pixel-avatar {
         width: 100px;
         height: 100px;
         margin: 0 auto;
     }
-    
+
     .character-name {
         font-size: 18px;
     }
-    
+
     .character-title {
         font-size: 12px;
     }
-    
+
     .contact-info {
         gap: 15px;
         justify-content: center;
     }
-    
+
     .contact-item {
         font-size: 9px;
         padding: 6px;
         gap: 6px;
     }
-    
+
     /* Menu tabs - stack vertically */
     .menu-tabs {
         flex-direction: column;
@@ -1499,109 +1690,111 @@ body::after {
         gap: 8px;
         padding: 20px;
     }
-    
+
     .tab {
         width: 240px;
         justify-content: center;
         padding: 14px 18px;
         font-size: 10px;
     }
-    
+
     /* Content container adjustments */
     .content-container {
         padding: 20px;
         margin-bottom: 25px;
     }
-    
+
     .panel-header h2 {
         font-size: 15px;
     }
-    
+
     /* Skills grid */
     .skills-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .skill-item {
         padding: 12px;
         gap: 12px;
     }
-    
+
     .skill-info h3 {
         font-size: 11px;
     }
-    
+
     .skill-level {
         font-size: 9px;
     }
-    
+
     /* Experience and education */
     .experience-item,
     .education-item {
         padding: 15px;
         gap: 12px;
     }
-    
+
     .experience-content h3,
     .education-content h3 {
         font-size: 12px;
     }
-    
-    .company, .school {
+
+    .company,
+    .school {
         font-size: 10px;
     }
-    
-    .duration, .year {
+
+    .duration,
+    .year {
         font-size: 9px;
     }
-    
+
     .achievements li,
     .cert-list li {
         font-size: 9px;
     }
-    
+
     /* Projects grid */
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .project-item {
         padding: 15px;
     }
-    
+
     .project-content h3 {
         font-size: 12px;
     }
-    
+
     .project-description {
         font-size: 9px;
     }
-    
+
     /* Other section */
     .other-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .collectible-item {
         padding: 15px;
     }
-    
+
     .collectible-item h3 {
         font-size: 10px;
     }
-    
+
     .collectible-item p {
         font-size: 8px;
     }
-    
+
     /* Footer adjustments */
     .footer {
         padding: 15px;
     }
-    
+
     .footer p {
         font-size: 8px;
     }
@@ -1612,85 +1805,85 @@ body::after {
     body {
         font-size: 14px;
     }
-    
+
     .game-container {
         padding: 15px 10px;
     }
-    
+
     /* Clock widget - hide on mobile */
     .stardew-clock {
         display: none;
     }
-    
+
     /* Character section mobile */
     .character-section {
         padding: 15px;
         margin-bottom: 20px;
     }
-    
+
     .pixel-avatar {
         width: 80px;
         height: 80px;
     }
-    
+
     .character-name {
         font-size: 14px;
         margin-bottom: 6px;
     }
-    
+
     .character-title {
         font-size: 10px;
         margin-bottom: 15px;
     }
-    
+
     .contact-info {
         gap: 10px;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .contact-item {
         font-size: 8px;
         padding: 5px;
         gap: 6px;
     }
-    
+
     .contact-item .icon {
         display: none;
     }
-    
+
     /* Menu tabs - full mobile stack */
     .menu-tabs {
         padding: 15px;
         gap: 6px;
     }
-    
+
     .tab {
         width: 200px;
         padding: 10px 14px;
         font-size: 8px;
     }
-    
+
     .tab-icon-img {
         width: 12px;
         height: 12px;
     }
-    
+
     /* Content adjustments */
     .content-container {
         padding: 15px;
         min-height: 300px;
     }
-    
+
     .panel-header h2 {
         font-size: 12px;
     }
-    
+
     .header-icon {
         width: 16px;
         height: 16px;
     }
-    
+
     /* Skills mobile layout */
     .skill-item {
         flex-direction: column;
@@ -1698,27 +1891,27 @@ body::after {
         padding: 10px;
         gap: 8px;
     }
-    
+
     .skill-icon {
         width: 28px;
         height: 28px;
         align-self: center;
     }
-    
+
     .skill-info h3 {
         font-size: 9px;
         margin-bottom: 6px;
     }
-    
+
     .skill-bar {
         height: 6px;
         margin-bottom: 4px;
     }
-    
+
     .skill-level {
         font-size: 7px;
     }
-    
+
     /* Experience mobile layout */
     .experience-item,
     .education-item {
@@ -1727,145 +1920,147 @@ body::after {
         padding: 12px;
         gap: 10px;
     }
-    
+
     .quest-marker {
         width: 28px;
         height: 28px;
         align-self: center;
     }
-    
+
     .book-icon {
         font-size: 20px;
         align-self: center;
     }
-    
+
     .experience-content h3,
     .education-content h3 {
         font-size: 10px;
         margin-bottom: 4px;
     }
-    
-    .company, .school {
+
+    .company,
+    .school {
         font-size: 8px;
         margin-bottom: 2px;
     }
-    
-    .duration, .year {
+
+    .duration,
+    .year {
         font-size: 7px;
         margin-bottom: 8px;
     }
-    
+
     .achievements li,
     .cert-list li {
         font-size: 7px;
         margin-bottom: 5px;
         padding-left: 12px;
     }
-    
+
     .achievements li::before {
         font-size: 6px;
     }
-    
+
     .cert-list li::before {
         font-size: 6px;
     }
-    
+
     /* Projects mobile layout */
     .project-item {
         padding: 12px;
     }
-    
+
     .project-icon {
         width: 32px;
         height: 32px;
         margin-bottom: 8px;
     }
-    
+
     .project-content h3 {
         font-size: 10px;
         margin-bottom: 6px;
     }
-    
+
     .project-description {
         font-size: 7px;
         margin-bottom: 8px;
         line-height: 1.3;
     }
-    
+
     .tech-tag {
         font-size: 6px;
         padding: 2px 6px;
     }
-    
+
     .project-link {
         font-size: 6px;
         padding: 4px 8px;
     }
-    
+
     /* Other section mobile */
     .other-grid {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .collectible-item {
         padding: 12px;
     }
-    
+
     .collectible-icon {
         width: 32px;
         height: 32px;
         margin-bottom: 8px;
     }
-    
+
     .hobby-icon {
         width: 24px;
         height: 24px;
         margin: 4px auto;
     }
-    
+
     .collectible-item h3 {
         font-size: 9px;
         margin-bottom: 6px;
     }
-    
+
     .collectible-item p {
         font-size: 7px;
         line-height: 1.3;
     }
-    
+
     /* Footer mobile */
     .footer {
         padding: 12px;
     }
-    
+
     .sparkles {
         font-size: 16px;
     }
-    
+
     .footer p {
         font-size: 7px;
         margin-top: 8px;
     }
-    
+
     /* Copy notification mobile */
     .copy-notification {
         font-size: 8px;
         padding: 8px 16px;
     }
-    
+
     /* Butterfly adjustments for mobile */
     .butterfly {
         width: 24px;
         height: 24px;
     }
-    
+
     /* Leaf system mobile optimization */
     .leaf {
         width: 64px;
         height: 64px;
     }
-    
+
     .petal {
         width: 16px;
         height: 16px;
@@ -1964,25 +2159,43 @@ body::after {
 
 /* Animations */
 @keyframes leafSway {
-    0%, 100% { 
-        transform: rotate(-2deg) translateY(0px); 
+
+    0%,
+    100% {
+        transform: rotate(-2deg) translateY(0px);
     }
-    25% { 
-        transform: rotate(1deg) translateY(-2px); 
+
+    25% {
+        transform: rotate(1deg) translateY(-2px);
     }
-    50% { 
-        transform: rotate(2deg) translateY(0px); 
+
+    50% {
+        transform: rotate(2deg) translateY(0px);
     }
-    75% { 
-        transform: rotate(-1deg) translateY(-1px); 
+
+    75% {
+        transform: rotate(-1deg) translateY(-1px);
     }
 }
 
 @keyframes leafShake {
-    0%, 100% { transform: scale(1) rotate(0deg); }
-    25% { transform: scale(1.15) rotate(-3deg); }
-    50% { transform: scale(1.1) rotate(2deg); }
-    75% { transform: scale(1.05) rotate(-1deg); }
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.15) rotate(-3deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(2deg);
+    }
+
+    75% {
+        transform: scale(1.05) rotate(-1deg);
+    }
 }
 
 @keyframes petalFallVariable {
@@ -1991,6 +2204,7 @@ body::after {
         opacity: 1;
         scale: 1;
     }
+
     100% {
         transform: translateY(var(--fall-distance)) translateX(var(--drift)) rotate(var(--rotation));
         opacity: 0;
@@ -2004,50 +2218,52 @@ body::after {
         opacity: 1;
         scale: 1;
     }
+
     5% {
         transform: translateY(calc(var(--fall-distance) * 0.02)) translateX(calc(var(--drift) * 0.05)) rotate(calc(var(--rotation) * 0.05));
         opacity: 1;
         scale: 0.99;
     }
+
     15% {
         transform: translateY(calc(var(--fall-distance) * 0.08)) translateX(calc(var(--drift) * 0.12)) rotate(calc(var(--rotation) * 0.15));
         opacity: 1;
         scale: 0.97;
     }
+
     30% {
         transform: translateY(calc(var(--fall-distance) * 0.20)) translateX(calc(var(--drift) * 0.25)) rotate(calc(var(--rotation) * 0.30));
         opacity: 0.95;
         scale: 0.94;
     }
+
     45% {
         transform: translateY(calc(var(--fall-distance) * 0.35)) translateX(calc(var(--drift) * 0.42)) rotate(calc(var(--rotation) * 0.45));
         opacity: 0.92;
         scale: 0.90;
     }
+
     60% {
         transform: translateY(calc(var(--fall-distance) * 0.52)) translateX(calc(var(--drift) * 0.60)) rotate(calc(var(--rotation) * 0.60));
         opacity: 0.85;
         scale: 0.85;
     }
+
     75% {
         transform: translateY(calc(var(--fall-distance) * 0.70)) translateX(calc(var(--drift) * 0.78)) rotate(calc(var(--rotation) * 0.75));
         opacity: 0.70;
         scale: 0.75;
     }
+
     90% {
         transform: translateY(calc(var(--fall-distance) * 0.88)) translateX(calc(var(--drift) * 0.92)) rotate(calc(var(--rotation) * 0.90));
         opacity: 0.40;
         scale: 0.55;
     }
+
     100% {
         transform: translateY(var(--fall-distance)) translateX(var(--drift)) rotate(var(--rotation));
         opacity: 0;
         scale: 0.3;
     }
 }
-
-
-
-
-
-
