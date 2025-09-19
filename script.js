@@ -677,3 +677,25 @@ function showCopyNotification(message) {
 
 // Scroll limiting function removed to allow proper scrolling to footer
 
+// Ensure smooth scrolling behavior
+document.documentElement.style.scrollBehavior = 'smooth';
+
+// Prevent any scroll interference
+function preventScrollInterference() {
+    // Remove any potential scroll event listeners that might interfere
+    const body = document.body;
+    const html = document.documentElement;
+    
+    // Ensure scrolling is enabled
+    body.style.overflowY = 'auto';
+    html.style.overflowY = 'auto';
+    
+    // Prevent any accidental scroll resets
+    window.addEventListener('scroll', function(e) {
+        // Don't prevent the scroll event - let it happen naturally
+    }, { passive: true });
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', preventScrollInterference);
+
