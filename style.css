@@ -553,7 +553,19 @@ body::after {
 }
 
 .contact-item .icon {
-    display: none;
+    font-size: 16px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.contact-item .contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .contact-item a {
@@ -1849,7 +1861,15 @@ body::after {
     }
 
     .contact-item .icon {
-        display: none;
+        font-size: 14px;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    .contact-item .contact-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
     }
 
     /* Menu tabs - full mobile stack */
