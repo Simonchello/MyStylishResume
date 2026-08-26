@@ -6,15 +6,10 @@
 }
 
 html {
-    height: 100%;
     overflow-x: hidden;
-    overflow-y: auto;
-}
-
-html,
-body {
-    min-height: 100vh;
-    width: 100%;
+    /* Reserve the scrollbar gutter so the page never shifts sideways
+       when switching between tabs of different height */
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -27,10 +22,11 @@ body {
     background-size: auto, cover;
     min-height: 100vh;
     color: #2F1B14;
-    overflow-x: hidden;
-    overflow-y: auto;
     position: relative;
     image-rendering: pixelated;
+    /* No overflow rules here on purpose: html owns the scrolling.
+       Setting overflow on body turns it into a second scroll container
+       that swallows wheel events and resets scrollTop. */
 }
 
 body::before {
@@ -52,6 +48,7 @@ body::after {
     position: fixed;
     top: 0;
     left: 0;
+    /* 120% so the -20% cloudFloat offset still covers the whole viewport */
     width: 120%;
     height: 100%;
     background-image:
@@ -1617,8 +1614,13 @@ body::after {
 }
 
 .sparkles {
+    /* Must shrink to fit: as a full-width block, the 360deg rotation
+       inflated its bounding box to ~1180px and made the page height
+       oscillate every frame */
+    display: inline-block;
     font-size: 20px;
     animation: sparkle 2s infinite;
+    will-change: transform;
 }
 
 @keyframes sparkle {
@@ -2089,13 +2091,17 @@ body::after {
 
 /* Interactive Leaves System */
 .interactive-leaves {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
     z-index: 500;
+    /* Clip to the page box: the leaf's ::before is rotated, so its bounding
+       box sticks out ~11px further than the leaf itself and would push the
+       document into horizontal overflow on narrow screens */
+    overflow: hidden;
 }
 
 .leaf {

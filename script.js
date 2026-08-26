@@ -456,34 +456,42 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeLeaves() {
         const leavesContainer = document.getElementById('leavesContainer');
         const contentContainer = document.querySelector('.content-container');
-        
+
         if (!leavesContainer || !contentContainer) return;
-        
+
         const leaf = document.createElement('div');
         leaf.className = 'leaf';
-        
-        // Position leaf at top-right corner of content area
-        const containerRect = contentContainer.getBoundingClientRect();
-        const x = containerRect.right - 48; // Half leaf visible (48px = half of 96px leaf)
-        const y = containerRect.top - 48; // Half leaf above container
-        
-        leaf.style.left = x + 'px';
-        leaf.style.top = y + 'px';
         leaf.style.animationDelay = '0s';
         leaf.style.animationDuration = '4s';
-        
+
         // Add magical petal explosion on click
         leaf.addEventListener('click', function(e) {
             createPetalExplosion(leaf);
-            
+
             // Visual feedback - shake animation
             leaf.classList.add('clicked');
             setTimeout(() => {
                 leaf.classList.remove('clicked');
             }, 300);
         });
-        
+
         leavesContainer.appendChild(leaf);
+
+        // Position after insertion so the real rendered size is known —
+        // the leaf shrinks to 64px on mobile via the media query
+        const size = leaf.offsetWidth || 96;
+        const containerRect = contentContainer.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+        // Half the leaf peeks past the top-right corner of the panel, but never
+        // past the viewport edge - that would push the page into horizontal overflow
+        const maxX = document.documentElement.clientWidth - size;
+        const x = Math.min(containerRect.right + scrollLeft - size / 2, maxX);
+        const y = containerRect.top + scrollTop - size / 2;
+
+        leaf.style.left = Math.max(0, x) + 'px';
+        leaf.style.top = Math.max(0, y) + 'px';
     }
     
     // Creates magical petal explosion effect when leaf is clicked
@@ -547,9 +555,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the leaves system
     initializeLeaves();
     
-    // Handle window resize - reposition leaf appropriately
+    // Handle window resize - reposition leaf appropriately.
+    // Only width changes matter: mobile browsers fire resize on every
+    // address bar show/hide, and rebuilding the leaf on those is pointless churn.
     let resizeTimeout;
+    let lastWidth = window.innerWidth;
     window.addEventListener('resize', function() {
+        if (window.innerWidth === lastWidth) return;
+        lastWidth = window.innerWidth;
+
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
             const leavesContainer = document.getElementById('leavesContainer');
@@ -675,27 +689,4 @@ function showCopyNotification(message) {
     }, 2000);
 }
 
-// Scroll limiting function removed to allow proper scrolling to footer
-
-// Ensure smooth scrolling behavior
-document.documentElement.style.scrollBehavior = 'smooth';
-
-// Prevent any scroll interference
-function preventScrollInterference() {
-    // Remove any potential scroll event listeners that might interfere
-    const body = document.body;
-    const html = document.documentElement;
-    
-    // Ensure scrolling is enabled
-    body.style.overflowY = 'auto';
-    html.style.overflowY = 'auto';
-    
-    // Prevent any accidental scroll resets
-    window.addEventListener('scroll', function(e) {
-        // Don't prevent the scroll event - let it happen naturally
-    }, { passive: true });
-}
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', preventScrollInterference);
 
