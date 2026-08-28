@@ -17,3 +17,11 @@ node_modules/
 Thumbs.db
 
 info.txt
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Confidential — this repo auto-deploys to GitHub Pages, so anything
+# committed here becomes publicly downloadable
+psiop_pitchdeck.pdf
+*pitchdeck*.pdf

@@ -1416,6 +1416,9 @@ body::after {
     display: flex;
     gap: 10px;
     justify-content: center;
+    /* Wrap instead of squeezing: flex items shrink below their content width
+       by default, and overflow:hidden on the link then clips the label */
+    flex-wrap: wrap;
 }
 
 .project-link {
@@ -1427,7 +1430,11 @@ body::after {
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative;
+    /* overflow:hidden clips the ::before shine sweep - keep it */
     overflow: hidden;
+    flex-shrink: 0;
+    max-width: 100%;
+    text-align: center;
 }
 
 .project-link::before {
