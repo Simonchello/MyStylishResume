@@ -258,38 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     /* ========================================
-     * SKILL BAR ANIMATION SYSTEM
-     * ======================================== */
-    
-    // Animates skill progress bars with staggered timing
-    function animateSkillBars() {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        if (skillBars.length === 0) return;
-        
-        skillBars.forEach((bar, index) => {
-            const level = parseInt(bar.getAttribute('data-level'), 10);
-            if (!level || level < 1 || level > 10) return;
-            
-            // Reset width and animate
-            bar.style.width = '0%';
-            setTimeout(() => {
-                bar.style.width = (level * 10) + '%';
-            }, 300 + (index * 100)); // Staggered animation delays
-        });
-    }
-    
-    // Trigger skill bar animation when Skills tab is clicked
-    const skillsTab = document.querySelector('[data-tab="skills"]');
-    if (skillsTab) {
-        skillsTab.addEventListener('click', function() {
-            setTimeout(animateSkillBars, 100);
-        });
-    }
-    
-    // Initialize skill bars on page load
-    animateSkillBars();
-    
-    /* ========================================
      * VISUAL EFFECTS AND ANIMATIONS
      * ======================================== */
     
@@ -426,27 +394,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         });
     });
-    
-    // Animates skill bars when they come into view (scroll-triggered)
-    function animateOnScroll() {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target.classList.contains('skill-progress')) {
-                    const level = parseInt(entry.target.getAttribute('data-level'), 10);
-                    if (level >= 1 && level <= 10) {
-                        entry.target.style.width = (level * 10) + '%';
-                    }
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of element is visible
-        });
-        
-        const skillBars = document.querySelectorAll('.skill-progress');
-        skillBars.forEach(bar => observer.observe(bar));
-    }
-    
-    animateOnScroll();
     
     /* ========================================
      * INTERACTIVE LEAVES SYSTEM
