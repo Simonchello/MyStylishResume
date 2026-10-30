@@ -1,6 +1,64 @@
 STARDEW VALLEY RESUME - IMPROVEMENT IDEAS
 ===========================================
 
+SITE REVIEW 2026-10-31 - KNOWN ISSUES (not fixed yet)
+=====================================================
+
+LAYOUT
+------
+[ ] Clock widget covers content
+    - .stardew-clock is position: fixed, so it stays on screen while scrolling
+    - 1280x800 laptop: once scrolled, it covers the "Other" tab and the
+      "Growth Hacking" skill card
+    - 1440px: it covers the right edge of the header card
+
+[ ] Background seam on long tabs
+    - stardewbackground.png repeats vertically, so on the Projects tab the
+      night sky shows up again below the grass
+
+[ ] Mobile overlaps
+    - Butterflies fly over card text
+    - The clickable leaf covers the end of the section heading
+    - Header + five stacked tabs take about 2/3 of the first screen
+
+[ ] Readability
+    - All text is set in Press Start 2P; skill card text is 8px on a phone
+    - Pinch-zoom is disabled (user-scalable=no, maximum-scale=1.0 in the
+      viewport meta tag)
+
+TECHNICAL
+---------
+[ ] No favicon (404 in the console) and no Open Graph tags - a link shared
+    in Telegram/LinkedIn shows no preview card
+
+[ ] Avatar me.png is 1024x1024 / 1.1 MB but displayed at ~80px
+
+[ ] Dead links (href="#") styled as buttons
+    - "Private Repository" x3 (Music Finder Bot, Birthday Bot, Custom Emoji Bot)
+    - "Video Automation" (TopperooClip)
+    - "Education Business" (Online School)
+
+[ ] Repo cleanup
+    - 12 images in assets/images are not used anywhere: avatar.jpg, clock.png,
+      Competive.jpg, Dog.gif, Drawing.jpg, leaf.jpg, owl-sprite.png,
+      projects-icon.jpg, Quirk.jpg, Snow.png, Stardew.jpg, SuperDay.png
+    - README describes a React/Tailwind stack; the site is plain HTML/CSS/JS
+    - The idea list below is from 2025-09 and partly done already
+      (mobile layout, real content, PDF download) - prune it
+
+[ ] Weather widget is hardcoded to Moscow (script.js) - switch to the
+    current city?
+
+CONTENT - OPEN QUESTIONS
+------------------------
+[ ] Header ("CS Student") and Experience ("Academic Journey": studies and
+    olympiads only) still tell the student story, while Skills and Projects
+    tell the founder one. Experience also mentions task trackers (Quirk),
+    which is no longer in Projects
+
+[ ] "Algo Trading" skill cites the Polymarket arbitrage, which was removed
+    from Projects
+
 PRIORITY 1 - ESSENTIAL FIXES
 =============================
 [ ] Mobile Responsiveness

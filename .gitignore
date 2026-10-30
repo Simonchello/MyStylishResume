@@ -25,3 +25,10 @@ info.txt
 # committed here becomes publicly downloadable
 psiop_pitchdeck.pdf
 *pitchdeck*.pdf
+
+# LaTeX source of Simon_Primak_Resume.pdf - kept locally on purpose,
+# never committed (everything committed here is published on GitHub Pages)
+*.tex
+# LaTeX build artifacts (*.log is already ignored above)
+*.aux
+*.out
